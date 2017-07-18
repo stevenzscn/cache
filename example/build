@@ -1,0 +1,3 @@
+g++ -std=c++11 example1.cc -o example1 -I../ -lpthread
+
+g++ -std=c++11 example2.cc -o example2 -I../ -lpthread
