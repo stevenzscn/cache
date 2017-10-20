@@ -13,8 +13,8 @@ int main()
     haha.set("zhangshuai", 123);
     haha.set("zuozuomuxi", 222);
     haha.set("chenhuijie", 233);
-    haha.set("nidaye", 123);
-    haha.set("caonima", 123);
+    haha.set("aaaaa", 123);
+    haha.set("bbbbb", 123);
     haha.set("meimei", 123);
     haha.set("1", 1, 5);
     haha.set("2", 2, 5);
