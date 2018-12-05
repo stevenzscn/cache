@@ -1,4 +1,4 @@
 # cache
-A fast, cache tool
+A fast C++ cache tool
 
 API like Redis
