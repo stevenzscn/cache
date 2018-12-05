@@ -13,7 +13,8 @@
 #include <pthread.h>
 #include <time.h>
 #include <sstream>
-#include <typeinfo>
+#include <type_traits>
+
 #include "timer_task.h"
 
 namespace cache {
@@ -159,7 +160,7 @@ int Cache<V>::del(const std::string& key) {
 
     return ret;
 }
-
+/*
 template <typename V>
 bool Cache<V>::is_value_num(const V& value) {
     if (
@@ -177,6 +178,30 @@ bool Cache<V>::is_value_num(const V& value) {
         || typeid(value) == typeid(float)
         || typeid(value) == typeid(double)
         || typeid(value) == typeid(long double)
+    ) {
+        return true;
+    }
+
+    return false;
+}
+*/
+template <typename V>
+bool Cache<V>::is_value_num(const V& value) {
+    if (
+        std::is_same<decltype(value), const char&>::value
+        || std::is_same<decltype(value), const unsigned char&>::value
+        || std::is_same<decltype(value), const signed char&>::value
+        || std::is_same<decltype(value), const short&>::value
+        || std::is_same<decltype(value), const unsigned short&>::value
+        || std::is_same<decltype(value), const int&>::value
+        || std::is_same<decltype(value), const unsigned&>::value
+        || std::is_same<decltype(value), const long&>::value
+        || std::is_same<decltype(value), const unsigned long&>::value
+        || std::is_same<decltype(value), const long long&>::value
+        || std::is_same<decltype(value), const unsigned long long&>::value
+        || std::is_same<decltype(value), const float&>::value
+        || std::is_same<decltype(value), const double&>::value
+        || std::is_same<decltype(value), const long double&>::value
     ) {
         return true;
     }
