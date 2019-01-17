@@ -10,7 +10,7 @@ int main()
     haha.set(key, 999);
     haha.set("zhangshuai", 123);
     haha.set("zuozuomuxi", 222);
-    haha.set("chenhuijie", 233);
+    haha.set("dengxiaoyun", 233);
     haha.set("aaaaa", 123);
     haha.set("bbbbb", 123);
     haha.set("meimei", 123);

@@ -14,6 +14,7 @@
 #include <time.h>
 #include <sstream>
 #include <type_traits>
+#include <iostream>
 
 #include "timer_task.h"
 
@@ -34,12 +35,20 @@ public:
         V value_;
         time_t deadtime_;
 
-        Item() : deadtime_(-1) {}
+        Item() : deadtime_(-1) {
+            std::cout << "Item init: " < value_ << std::endl;
+        }
 
         Item(const V & value, const time_t deadtime) :
-            value_(value), deadtime_(deadtime)
-        {}
+            value_(value), deadtime_(deadtime) {
+            std::cout << "Item init: " << value_ << std::endl;
+        }
+
+        ~Item() {
+            std::cout << "~Item destroy: " << value_ << std::endl;
+        }
     };
+
     Cache();
     Cache(const Cache&) = delete;
     Cache & operator=(const Cache&) = delete;
